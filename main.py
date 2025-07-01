@@ -29,7 +29,11 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        updatable.update(dt)    
+        updatable.update(dt)
+        for roid in asteroids:
+            if roid.is_colliding(player):
+                print("Game over!")
+                exit()
         screen.fill("black")
         for obj in drawable:
             obj.draw(screen)
