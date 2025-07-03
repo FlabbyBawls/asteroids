@@ -37,6 +37,10 @@ def main():
             if roid.is_colliding(player):
                 print("Game over!")
                 exit()
+            for shot in shots:
+                if roid.is_colliding(shot):
+                    roid.kill()
+                    shot.kill()
         screen.fill("black")
         for obj in drawable:
             obj.draw(screen)
