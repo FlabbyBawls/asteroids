@@ -30,12 +30,14 @@ def main():
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                print(f"Player score: {player.score}")
                 return
 
         updatable.update(dt)
         for roid in asteroids:
             if roid.is_colliding(player):
                 print("Game over!")
+                print(f"Player score: {player.score}")
                 exit()
             for shot in shots:
                 if roid.is_colliding(shot):
