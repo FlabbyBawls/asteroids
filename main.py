@@ -41,9 +41,8 @@ def main():
                 exit()
             for shot in shots:
                 if roid.is_colliding(shot):
-                    roid.split()
+                    roid.split(player)
                     shot.kill()
-                    player.score += 1
         screen.fill("black")
         for obj in drawable:
             obj.draw(screen)
